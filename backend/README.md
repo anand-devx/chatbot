@@ -46,7 +46,7 @@ To consume this backend:
 
 ## 🛡 Auth Note
 
-JWT will be returned after successful registration (if implemented). Store this in localStorage or cookies on the frontend.
+~~JWT will be returned after successful registration (if implemented). Store this in localStorage or cookies on the frontend.~~[Not yet configured for frontend]
 
 ---
 
