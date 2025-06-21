@@ -50,7 +50,7 @@ JWT will be returned after successful registration (if implemented). Store this 
 
 ---
 
-## 📄 Environment (For Reference Only)
+## 📄 Environment (For Using and Contributing in Backend)
 
 Use .env.sample file and change its name to .env
 ---
