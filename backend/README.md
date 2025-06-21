@@ -12,7 +12,7 @@ https://chatbot-2-k0xs.onrender.com/
 
 ## 🔐 User Registration Endpoint
 
-**POST** `/api/register`  
+**POST** `/api/v1/users/register`  
 Use this endpoint to register a new user from the frontend.
 
 ### ✅ Request Format
