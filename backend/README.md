@@ -39,7 +39,7 @@ To consume this backend:
 1. Make sure your frontend hits the correct endpoint:  
    **`https://chatbot-2-k0xs.onrender.com/api/v1/users/register`**
 
-2. Send valid fields (`fullName`, `email`, `password`, `username`)  
+2. Send valid fields (`fullName`, `email`, `password`, `username`)  [`email` and `username` must be unique in each post request]
 
 ---
 
