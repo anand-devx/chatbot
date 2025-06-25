@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@google/genai": "^1.6.0",
     "@tailwindcss/vite": "^4.1.10",
     "buffer": "npm:Buffer@^0.0.0",
