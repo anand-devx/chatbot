@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { Buffer } from "buffer";
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
-
+window.Buffer = Buffer;
 function App() {
   fetch('https://chatbot-2-k0xs.onrender.com')
   .then((res) => {console.log("fetch")})

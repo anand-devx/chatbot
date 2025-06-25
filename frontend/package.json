@@ -12,7 +12,7 @@
   "dependencies": {
     "@google/genai": "^1.6.0",
     "@tailwindcss/vite": "^4.1.10",
-    "buffer": "^6.0.3",
+    "buffer": "npm:Buffer@^0.0.0",
     "Buffer": "^0.0.0",
     "dotenv": "^16.5.0",
     "react": "^19.1.0",
