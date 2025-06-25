@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { GoogleGenAI } from "@google/genai";
-import { Buffer } from "buffer";
+import { Buffer } from "buffer/";
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
 window.Buffer = Buffer;
 function App() {
