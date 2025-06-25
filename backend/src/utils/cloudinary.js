@@ -12,7 +12,8 @@ import fs from 'fs'
 export const uploadToCloudinary = async (filepath) => {
     try {
         const response = await cloudinary.uploader.upload(filepath, {
-                    resource_type:'auto'
+                    resource_type: "auto",
+                    
                 })
         fs.unlinkSync(filepath)
         return response;

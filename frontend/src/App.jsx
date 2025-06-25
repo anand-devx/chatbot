@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GoogleGenAI } from "@google/genai";
-
+import UseImage from './components/UseImage.jsx'
 
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
 
@@ -52,7 +52,10 @@ function App() {
   
 
   return (
-    <div className="max-w-xl mx-auto p-4">
+    <div className="bg-amber-600 w-full min-h-screen flex justify-between">
+      
+      <div className="max-w-xl mx-auto p-4 ">
+      
       <h1 className="text-2xl font-bold mb-4">Gemini Chatbot</h1>
 
       <div className="h-96 overflow-y-auto border rounded p-3 bg-gray-50 mb-4">
@@ -85,6 +88,7 @@ function App() {
           className="flex-1 border p-2 rounded"
           placeholder="Ask Gemini anything..."
         />
+        <UseImage />
         <button
           onClick={handleSend}
           className="bg-green-600 text-white px-4 py-2 rounded"
@@ -92,6 +96,7 @@ function App() {
           Send
         </button>
       </div>
+    </div>
     </div>
   );
 }
