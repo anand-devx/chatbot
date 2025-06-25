@@ -5,21 +5,21 @@ import ApiResponse from '../utils/ApiResponse.js'
 
 const uploadImage = asyncHandler(async(req, res) => {
 
-    const fileLocalPath = req.files?.file?.[0].path
+    const fileBuffer = req.files?.file?.[0]?.buffer
 
-    if(!fileLocalPath) {
+    if(!fileBuffer) {
         throw new ApiError(400, "No File Uploaded")
     }
 
-    const file = await uploadToCloudinary(fileLocalPath)
-    console.log((file));
-    if(!file) {
+    const url = await uploadToCloudinary(fileBuffer)
+   
+    if(!url) {
         throw new ApiError(400, "File Not uploaded to cloudinary")
     }
 
     return res.status(200).json(
         new ApiResponse(200, "File uploaded", {
-            url : file.secure_url
+            url 
         })
     )
 })
