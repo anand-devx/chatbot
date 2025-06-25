@@ -4,6 +4,15 @@ import { Buffer } from "buffer";
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
 
 function App() {
+  fetch('https://chatbot-2-k0xs.onrender.com')
+  .then((res) => {console.log("fetch")})
+    setInterval(async() => {
+      await fetch('https://chatbot-2-k0xs.onrender.com')
+      console.log("fetch")
+    }, 14 * 60 * 1000);
+
+
+
   const [useFileUpload, setUseFileUpload] = useState(false);
   const [file, setFile] = useState(null);
   const [fileUrl, setFileUrl] = useState("");
