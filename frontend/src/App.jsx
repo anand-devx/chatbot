@@ -119,7 +119,7 @@ function App() {
         });
 
         const text = result.text;
-        setChat((prev) => [...prev, { role: "model", text }]);
+        setChat((prev) => [...prev, { role: "model",  text: typeof(text)!=="undefined" ? text : 'I cannot help with that' }]);
         setFile(null);
         setFileUrl("");
         setFileName("");
@@ -139,7 +139,7 @@ function App() {
         });
 
         const text = response.text;
-        setChat((prev) => [...prev, { role: "model", text }]);
+        setChat((prev) => [...prev, { role: "model", text: typeof(text)!=="undefined" ? text : 'I cannot help with that' }]);
       } catch (err) {
         setErrorMsg("Failed to get response from Gemini.");
         setChat((prev) => [
