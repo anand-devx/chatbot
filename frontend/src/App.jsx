@@ -244,8 +244,14 @@ function App() {
               <div ref={chatEndRef} />
             </div>
             {/* File Upload Area (remains above footer) */}
-            {useFileUpload && (
-              <div className="flex flex-col sm:flex-row gap-2 mt-2 items-center px-2 pb-2">
+            
+          </div>
+        </div>
+      </main>
+      {/* Fixed Footer Input */}
+      <footer className="fixed flex flex-col bottom-0 left-0 w-full z-30 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 shadow-lg">
+        {useFileUpload && (
+              <div className="flex flex-col justify-end sm:flex-row gap-2 mt-2 items-center px-2 pb-2">
                 <input
                   type="file"
                   value={fileName}
@@ -303,11 +309,7 @@ function App() {
                 </button>
               </div>
             )}
-          </div>
-        </div>
-      </main>
-      {/* Fixed Footer Input */}
-      <footer className="fixed bottom-0 left-0 w-full z-30 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 shadow-lg">
+        
         <form
           className="max-w-full flex flex-col sm:flex-row gap-2 md:gap-3 items-center px-4 py-3"
           onSubmit={e => {
@@ -315,6 +317,7 @@ function App() {
             handleSend();
           }}
         >
+          
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -351,7 +354,7 @@ function App() {
                     d="M4 12a8 8 0 018-8v8z"
                   ></path>
                 </svg>
-                Sending...
+                Writing...
               </span>
             ) : (
               <span className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
