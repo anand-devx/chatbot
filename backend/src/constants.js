@@ -1,1 +1,1 @@
-export const DB_NAME="chatbot"
+export const DB_NAME="notes"

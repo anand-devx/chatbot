@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { Buffer } from "buffer";
+import DOMPurify from 'dompurify'
+import {marked} from 'marked'
+// https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js
+
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GENAI_API_KEY });
 window.Buffer = Buffer;
 function App() {
@@ -153,7 +157,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 transition-all duration-700">
+    
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 transition-all duration-700">
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 w-full z-30 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 shadow-lg">
         <div className="max-w-full flex items-center px-6 py-3">
@@ -227,9 +232,18 @@ function App() {
                         {msg.role === "user" ? "You" : "Gemini"}
                       </span>
                     </div>
-                    <span className="whitespace-pre-line text-xs sm:text-base md:text-lg leading-relaxed flex items-center gap-2">
-                      {msg.text}
-                    </span>
+                      {msg.role === "model" ? <span className="whitespace-pre-line text-xs sm:text-base md:text-lg leading-relaxed  gap-2"
+                    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(msg.text)) }}
+                    >
+                   {
+                    console.log(msg.text)
+                   }
+                    </span> : ""}
+                    {msg.role === "user" ? <span className="whitespace-pre-line text-xs sm:text-base md:text-lg leading-relaxed  gap-2"
+                    
+                    >
+                   {msg.text}
+                    </span> : ""}
                     {/* Show uploaded image if present */}
                     {msg.fileUrl && (
                       <img
